@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pile</title>
+    <link rel="shortcut icon" href="imgs/coins.png" type="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="cabecalho">
+        <img class="logoimg" src="/imgs/coins.png" alt="" onclick="location.href='/'">
+        <h1 class="logo" onclick="location.href='/'">Media Pile</h1>
+        <button class="add" onclick="location.href='/cadastro'">+ Adicionar</button>
+    </div>
+    <div class="main3">
+        <div class="log-containerEditar">
+            <h1>Editar perfil:</h1><br><br><br>
+        <form action="/perfil/edicao" method="POST">
+            <label>Nome:</label><br>
+            <input type="text" name="nome"><br><br>
+
+            <label>URL da foto:</label><br>
+            <input type="url" name="foto_url"><br><br>
+
+            <button class="salvarUsuarioDepoisDaEdicao" type="submit">Salvar</button>
+        </form>
+    </div>
+    </div>
+    <script src="/app.js"></script>
+</body>
+
+</html>

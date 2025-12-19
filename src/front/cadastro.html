@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pile</title>
+    <link rel="shortcut icon" href="imgs/coins.png" type="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="cabecalho">
+        <img class="logoimg" src="/imgs/coins.png" alt="" onclick="location.href='/'">
+        <h1 class="logo" onclick="location.href='/'">Media Pile</h1>
+        <button class="add" onclick="location.href='/cadastro'">+ Adicionar</button>
+    </div>
+
+    <div class="main4">
+        <div class="log-containerCadastrar">
+            <h1>Novo registro:</h1><br><br><br>
+        <form action="/adicionar" method="POST">
+            <label for="titulo">Tipo:</label><br>
+            <select name="tipo" id="tipo">
+                <option value="jogos">Jogo</option>
+                <option value="filmes">Filme</option>
+                <option value="series">Série</option>
+                <option value="livros">Livro</option>
+            </select><br><br>
+
+            <label for="titulo">Título:</label><br>
+            <input type="text" id="titulo" name="titulo" required><br><br>
+
+            <label for="comentario">Comentário:</label><br>
+            <textarea id="comentario" name="comentario"></textarea><br><br>
+
+            <label for="nota">Nota (0–10):</label><br>
+            <input type="number" id="nota" name="nota" min="0" max="10"><br><br>
+
+            <label for="capa_url">URL da capa:</label><br>
+            <input type="url" id="capa_url" name="capa_url"><br><br>
+
+            <label for="concluido">Status:</label><br>
+            <select name="concluido" id="concluido">
+                <option value="1">Terminado</option>
+                <option value="0">Pendente</option>
+            </select><br><br>
+
+            <button type="submit">Salvar</button>
+        </form>
+        </div>
+    </div>
+    <script src="/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pile</title>
+    <link rel="shortcut icon" href="imgs/coins.png" type="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="cabecalho">
+        <img class="logoimg" src="/imgs/coins.png" alt="" onclick="location.href='/'">
+        <h1 class="logo" onclick="location.href='/'">Media Pile</h1>
+        <button class="add" onclick="location.href='/cadastro'">+ Adicionar</button>
+    </div>
+    <div class="main3">
+        <div class="log-containerEditar">
+        <h1>Editar registro:</h1>
+        <br><br><br>
+        <form id="form-editar" method="POST">
+            <label>Título:</label><br>
+            <input type="text" id="titulo" name="titulo" required><br><br><br>
+
+            <label>Comentário:</label><br>
+            <textarea id="comentario" name="comentario"></textarea><br><br>
+
+            <label>Nota:</label><br>
+            <input type="number" id="nota" name="nota" min="0" max="10" required><br><br>
+
+            <label>Capa URL:</label><br>
+            <input type="url" id="capa_url" name="capa_url" required><br><br>
+
+            <button type="submit">Salvar alterações</button>
+        </form>
+        
+        </div>
+    </div>
+    <script>
+        //serve pra ver qual é o log que tem que ser editado e suas infos
+        const params = new URLSearchParams(window.location.search);
+        const tipo = params.get("tipo");
+        const id = params.get("id");
+
+        fetch(`/log/${tipo}/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("titulo").value = data.titulo;
+                document.getElementById("comentario").value = data.comentario;
+                document.getElementById("nota").value = data.nota;
+                document.getElementById("capa_url").value = data.capa_url;
+            });
+
+        const form = document.getElementById("form-editar");
+        form.action = `/edicao/${tipo}/${id}`;
+        form.method = "POST";
+    </script>
+    <script src="/app.js"></script>
+
+</body>
+
+</html>

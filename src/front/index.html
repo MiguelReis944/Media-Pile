@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pile</title>
+    <link rel="shortcut icon" href="imgs/coins.png" type="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="cabecalho">
+        <img class="logoimg" src="/imgs/coins.png" alt="" onclick="location.href='/'">
+        <h1 class="logo" onclick="location.href='/'">Media Pile</h1>
+        <button class="add" onclick="location.href='/cadastro'">+ Adicionar</button>
+    </div>
+    <div class="main2"></div>
+        <div class="cocozao">
+            <div class="user"></div>
+            <div class="cocozinho"></div>
+        </div>
+        <div class="midia">
+            <button id="jogos" onclick="carregar('jogos')">Jogos</button>
+            <button id="filmes" onclick="carregar('filmes')">Filmes</button>
+            <button id="series" onclick="carregar('series')">Séries</button>
+            <button id="livros" onclick="carregar('livros')">Livros</button>
+        </div>
+        <div class="conteiner" id="conteiner">
+
+        </div>
+    </div>
+    <script src="/scripts_front/home.js"></script>
+    <script src="/scripts_front/geral.js"></script>
+
+</body>
+
+</html>
